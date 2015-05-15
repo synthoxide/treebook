@@ -1,14 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @status.name %>
-</p>
+<h1>Current Status</h1>
 
-<p>
-  <strong>Content:</strong>
-  <%= @status.content %>
-</p>
 
-<%= link_to 'Edit', edit_status_path(@status) %> |
+<div class="ui comments">
+  <div class="comment">
+    <a class="avatar">
+      <img src="/images/avatar/small/joe.jpg">
+    </a>
+    <div class="content">
+      <a class="author"><%= @status.name %></a>
+      <div class="text">
+        <%= @status.content %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui submit button">
+<%= link_to 'Edit', edit_status_path(@status) %>
+</div>
+
+<div class="ui submit button">
 <%= link_to 'Back', statuses_path %>
+</div>
